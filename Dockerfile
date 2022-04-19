@@ -11,6 +11,6 @@ RUN mvn -f /home/app/src/pom.xml clean install -DskipTests
 
 
 FROM openjdk:8-jdk-alpine
-COPY --from=build /home/app/target/app-2.6.3.war /usr/local/lib/app-2.6.3.war
+COPY --from=build /home/app/src/target/app-2.6.3.war /usr/local/lib/app-2.6.3.war
 EXPOSE 8080
-CMD ["java", "-jar", "app-2.6.3.war"]
+CMD ["java", "-Dspring.profiles.active=local", "-jar", "app-2.6.3.war"]
