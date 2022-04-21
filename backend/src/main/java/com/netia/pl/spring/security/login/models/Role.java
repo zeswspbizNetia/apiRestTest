@@ -3,7 +3,7 @@ package com.netia.pl.spring.security.login.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "role")
 public class Role {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
